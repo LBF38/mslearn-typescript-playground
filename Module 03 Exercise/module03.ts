@@ -2,6 +2,7 @@
 interface IceCream {
     flavor: string;
     scoops: number;
+    instructions?: string;
 }
 
 let myIceCream: IceCream = {
