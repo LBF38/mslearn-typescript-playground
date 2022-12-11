@@ -87,3 +87,8 @@ diceRoll = 2;    //* Valid
 // Collection Type
 let list: number[] = [1, 2, 3];
 let list2: Array<number> = [1, 2, 3];
+
+// Tuple Type
+let person1: [string, number] = ['Marcia', 35]; // OK
+// let person1: [string, number] = ['Marcia', 35, true]; // Error: Tuple type '[string, number]' of length '2' has no element at index '2'.
+// let person1: [string, number] = [35, 'Marcia']; // Error: Type 'number' is not assignable to type 'string'.
