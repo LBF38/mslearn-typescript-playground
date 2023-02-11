@@ -1,8 +1,8 @@
 class Car {
   // Properties
-  _make: string;
-  _color: string;
-  _doors: number;
+  private _make: string;
+  private _color: string;
+  private _doors: number;
 
   // Constructor
   constructor(make: string, color: string, doors: number = 4) {
@@ -55,14 +55,13 @@ class Car {
     return `${this.worker()} is turning ${direction}`;
   }
   // This function performs work for the other method functions
-  worker(): string {
+  private worker(): string {
     return this._make;
   }
 }
 
 let myCar1 = new Car("Cool Car Company", "blue", 2); // Instantiates the Car object with all parameters
 console.log(myCar1.color); // Calls the getter for the color property
-console.log(myCar1._color); // Calls the private color property
 
 // let myCar2 = new Car("Galaxy Motors", "red", 3);
 // myCar2.doors = 4; // Calls the setter for the doors property
