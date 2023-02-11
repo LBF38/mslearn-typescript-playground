@@ -66,7 +66,7 @@ console.log(subtractNumbers(1, 2));
 
 let doCalculation = (operation: "add" | "subtract"): calculator => {
   if (operation === "add") {
-    return addNumbers;
+    return addNumbers2;
   } else {
     return subtractNumbers;
   }
