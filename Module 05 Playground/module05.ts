@@ -1,11 +1,13 @@
 class Car {
   // Properties
+  private static _numberOfCars: number = 0;
   private _make: string;
   private _color: string;
   private _doors: number;
 
   // Constructor
   constructor(make: string, color: string, doors: number = 4) {
+    Car._numberOfCars++;
     this._make = make;
     this._color = color;
     if (doors % 2 === 0) {
@@ -44,6 +46,13 @@ class Car {
     }
   }
 
+  /**
+   * getNumberOfCars
+   */
+  public static getNumberOfCars(): number {
+    return Car._numberOfCars;
+  }
+
   // Methods
   accelerate(speed: number): string {
     return `${this.worker()} is accelerating to ${speed} MPH.`;
@@ -73,3 +82,5 @@ console.log(myCar3.doors); // returns 4, the default value
 console.log(myCar1.accelerate(35));
 console.log(myCar1.brake());
 console.log(myCar1.turn("right"));
+
+console.log(Car.getNumberOfCars());
