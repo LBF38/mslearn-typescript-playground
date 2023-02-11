@@ -54,7 +54,10 @@ let addThreeNumbers = (x: number, y: number, z: number = 100): number =>
   x + y + (z ?? 0);
 addThreeNumbers(10, 20);
 
-type calculator = (x: number, y: number) => number;
+// type calculator = (x: number, y: number) => number;
+interface calculator {
+  (x: number, y: number): number;
+}
 let addNumbers2: calculator = (x: number, y: number): number => x + y;
 let subtractNumbers: calculator = (x: number, y: number): number => x - y;
 
