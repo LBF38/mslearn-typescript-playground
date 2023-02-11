@@ -1,10 +1,10 @@
-function displayAlert(message: string | number) {
-  alert("The message is " + message);
-}
+// function displayAlert(message: string | number) {
+//   alert("The message is " + message);
+// }
 
-displayAlert("Hello World");
-displayAlert(String(123));
-displayAlert(123);
+// displayAlert("Hello World");
+// displayAlert(String(123));
+// displayAlert(123);
 
 function sum(input: number[]): number {
   let total: number = 0;
@@ -48,3 +48,25 @@ function displayMessage({ text, sender }: Message) {
 }
 
 displayMessage({ sender: "Christopher", text: "hello, world" });
+
+// Exercise - Playground
+let addThreeNumbers = (x: number, y: number, z: number = 100): number =>
+  x + y + (z ?? 0);
+addThreeNumbers(10, 20);
+
+type calculator = (x: number, y: number) => number;
+let addNumbers2: calculator = (x: number, y: number): number => x + y;
+let subtractNumbers: calculator = (x: number, y: number): number => x - y;
+
+console.log(addNumbers2(1, 2));
+console.log(subtractNumbers(1, 2));
+
+let doCalculation = (operation: "add" | "subtract"): calculator => {
+  if (operation === "add") {
+    return addNumbers;
+  } else {
+    return subtractNumbers;
+  }
+};
+
+console.log(doCalculation("add")(1, 2));
