@@ -8,7 +8,11 @@ class Car {
   constructor(make: string, color: string, doors: number = 4) {
     this._make = make;
     this._color = color;
-    this._doors = doors;
+    if (doors % 2 === 0) {
+      this._doors = doors;
+    } else {
+      throw new Error("Doors must be an even number");
+    }
   }
 
   // Accessors
@@ -55,3 +59,18 @@ class Car {
     return this._make;
   }
 }
+
+let myCar1 = new Car("Cool Car Company", "blue", 2); // Instantiates the Car object with all parameters
+console.log(myCar1.color); // Calls the getter for the color property
+console.log(myCar1._color); // Calls the private color property
+
+// let myCar2 = new Car("Galaxy Motors", "red", 3);
+// myCar2.doors = 4; // Calls the setter for the doors property
+// console.log(myCar2.doors); // Calls the getter for the doors property
+
+let myCar3 = new Car("Galaxy Motors", "gray");
+console.log(myCar3.doors); // returns 4, the default value
+
+console.log(myCar1.accelerate(35));
+console.log(myCar1.brake());
+console.log(myCar1.turn("right"));
