@@ -1,4 +1,4 @@
-class Car {
+class Car implements Vehicle {
   // Properties
   private static _numberOfCars: number = 0;
   private _make: string;
@@ -118,3 +118,12 @@ let eCar = new ElectricCar("Electric Car Co.", "black", 263);
 console.log(eCar.doors); // returns the default, 2
 spark.charge(); // returns "Spark Motors is charging"
 console.log(spark.brake()); // returns "Spark Motors is braking with the regenerative braking system"
+
+interface Vehicle {
+  make: string;
+  color: string;
+  doors: number;
+  accelerate(speed: number): string;
+  brake(): string;
+  turn(direction: "left" | "right"): string;
+}
